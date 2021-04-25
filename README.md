@@ -5,9 +5,9 @@ u3574505 Lau Cheuk Ning
 
 
 # Introduction of game:
--Minesweeper is a single-player game with three difficulties, which are beginner mode(9*9=81 grids board with 10 bombs), intermediate mode(16*16=256 grids board with 40 bombs),   expert mode(24*24=547 grids board with 120 bombs) 
+-Minesweeper is a single-player game with three difficulties, which are beginner mode(9x9=81 grids board with 10 bombs), intermediate mode(16x16=256 grids board with 40 bombs),   expert mode(24x24=547 grids board with 120 bombs) 
 
--winning method:to find out all the grids without bombs or flag all the bombs
+-winning method: To find out all the grids without bombs or flag all the bombs
 
 # Gamerule:
 1. After select the mode you want, the game will generate a board which the grid is in "*" format. 
@@ -30,8 +30,8 @@ execution method:
 
 
 # Features of minesweeper
--generate a board with different number of grids(for example (9*9),(16*16),(24*24)) and random placement of bombs.
--Data structures for storing game status: 
--Dynamic memory management: real time define the size for the minesweeper board
--File input/output: allow the users to save the game status when they are playing the minesweeper, also allow the users to load the saved files(the minesweeper board they saved) and continue the game play.
--Program codes in multiple files: we have seperate the programe code in different file which are the msp.cpp(save the function of running the game), msp.h(declare the existence of the function), msp_main.cpp(the main function for execute the game).
+1. generate a board with different number of grids(for example (9*9),(16*16),(24*24)) and random placement of bombs.
+2. Data structures for storing game status: 
+3. Dynamic memory management: real time define the size for the minesweeper board
+4. File input/output: allow the users to save the game status when they are playing the minesweeper, also allow the users to load the saved files(the minesweeper board they saved) and continue the game play.
+5. Program codes in multiple files: we have seperate the programe code in different file which are the msp.cpp(save the function of running the game), msp.h(declare the existence of the function), msp_main.cpp(the main function for execute the game).
