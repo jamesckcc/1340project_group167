@@ -22,11 +22,11 @@ make msp
 ./msp
 execution method:
 1. You need to input the number for selecting to play a new game or loading the saved game or exit. if you select to play a new game, you need to input the number for selecting the number of game mode.
-2. The game board is in a square pattern which y-axis is number(1,2,3...) and x-axis is character(a,b,c...). 
-   2.1 when you are going to open a grid, you can input "p" in the beginning and the grid you want in yx format, such as p1a, p9c. 
-   2.2 when you are going to flag a grid, you can input "f" in the beginning and the grid you want in yx format, such as f1a, f9c. 
-   2.3 when you are going to unflag a grid, you can input that grid again same as the format of flag a grid.
-3. If you want to save or exit the game when you are playing, you can input "s".
+As the game board is in a square pattern which y-axis is number(1,2,3...) and x-axis is character(a,b,c...). 
+2. when you are going to open a grid, you can input "p" in the beginning and the grid you want in yx format, such as p1a, p9c. 
+3. when you are going to flag a grid, you can input "f" in the beginning and the grid you want in yx format, such as f1a, f9c. 
+4. when you are going to unflag a grid, you can input that grid again same as the format of flag a grid.
+5. If you want to save or exit the game when you are playing, you can input "s".
 
 
 # Features of minesweeper
