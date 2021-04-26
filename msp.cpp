@@ -247,10 +247,12 @@ void GenerateBoard(int** board, int size, int bombs) {
     delete[] arr;
 }
 
-// checking for the 0 value next the 0 value grid
+// the recursion function use in run board for checking for the 0 value next the 0 value grid
 void runboard2(int** board, int size, int x, int y, int& sum) {
     board[x][y] += 10;
     sum += 1;
+    
+    
     for (int i = x - 1; i <= x + 1; i++) {
         for (int j = y - 1; j <= y + 1; j++) {
             if (i >= 0 && i < size && j >= 0 && j < size) {
@@ -285,9 +287,12 @@ void runboard2(int** board, int size, int x, int y, int& sum) {
 void runboard(int** board, int size, int x, int y, int& sum) {
     board[x][y] += 10;
     sum += 1;
+    
+    //for checking the adjacent grid to the selected grid is 0 or not and open it
     for (int i = x - 1; i <= x + 1; i++) {
         for (int j = y - 1; j <= y + 1; j++) {
             if (i >= 0 && i < size && j >= 0 && j < size) {
+                //check for the grid is opened or not and is a bomb or not
                 if (board[i][j] < 9 && board[i][j] >= 0) {
                     if (board[i][j] == 0) {
                         runboard2(board, size, i, j, sum);
@@ -323,6 +328,8 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
             y = (a - 97);
 
             // check for input validation
+            //run the board and open the grid if the input is valid
+            //output "invalid input" if the input is invalid
             if (x < size && x >= 0 && y < size && y >= 0) {
                 if (board[x][y] < 10 && board[x][y] >= 0) {
                     runboard(board, size, x, y, sum);
@@ -362,7 +369,8 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
             cin >> x >> a;
             x -= 1;
             y = (a - 97);
-
+            
+            // check for input validation
             if (x < size && x >= 0 && y < size && y >= 0 && countf != bombs) {
                 if (board[x][y] < 9) {
                     if (board[x][y] < -10) {
@@ -402,6 +410,7 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
         cin.ignore(1024, '\n');
         cin.clear();
     }
+    //when the game is over, reset the sum of grid that is opened and the sum of flag into 0
     sum = 0;
     sumf = 0;
 }
