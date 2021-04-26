@@ -30,7 +30,7 @@ As the game board is in a square pattern which y-axis is number(1,2,3...) and x-
 
 
 # Features of minesweeper
-1. generate a board with different number of grids(for example (9*9),(16*16),(24*24)) and random placement of bombs.
+1. generate a board with different number of grids(for example (9X9),(16X16),(24X24)) and random placement of bombs.
 2. Data structures for storing game status: 
 3. Dynamic memory management: real time define the size for the minesweeper board
 4. File input/output: allow the users to save the game status when they are playing the minesweeper, also allow the users to load the saved files(the minesweeper board they saved) and continue the game play.
