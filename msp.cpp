@@ -317,7 +317,7 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
     // looping for running the minesweeper
     while ((sum != size * size - bombs) && (sumf != bombs)) {
         char a, b;
-        cout << "Number of Flags left: " << bombs - sumf << endl;
+        cout << "Number of Flags left: " << bombs - countf << endl;
         cout << "please input : ";
         cin >> b;
 
@@ -332,7 +332,7 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
             //output "invalid input" if the input is invalid
             if (x < size && x >= 0 && y < size && y >= 0) {
                 if (board[x][y] < 10 && board[x][y] >= 0) {
-                    runboard(board, size, x, y, sum);
+                    runboard(board, size, x, y);
                     PrintBoard(board, size);
                 }
 
@@ -341,6 +341,10 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
                     sum = 0;
                     sumf = 0;
                     cout << "GAMEOVER! You stepped on a bomb" << endl;
+                    cin.ignore(1024, '\n');
+                    cout << "Press enter to continue...";
+                    cin.get();
+                    return;
                     break;
                 }
 
@@ -369,29 +373,36 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
             cin >> x >> a;
             x -= 1;
             y = (a - 97);
-            
+
             // check for input validation
-            if (x < size && x >= 0 && y < size && y >= 0 && countf != bombs) {
-                if (board[x][y] < 9) {
+            if (x < size && x >= 0 && y < size && y >= 0) {
+
+                 if (board[x][y] < 9) {
+
                     if (board[x][y] < -10) {
                         board[x][y] += 100;
                         countf -= 1;
                         if (board[x][y] == -10)
                             sumf -= 1;
+                        PrintBoard(board, size);
                     }
 
 
-                    else {
+                    else if (board[x][y] >= -10 && countf < bombs) {
                         board[x][y] -= 100;
                         countf += 1;
                         if (board[x][y] == -110)
                             sumf += 1;
+                        PrintBoard(board, size);
                     }
-                    PrintBoard(board, size);
-                }
+
+                    else if (board[x][y] >= -10 && countf == bombs) {
+                        cout << "invalid input! (No more flags avaliable)" << endl;
+                    }
+                 }
 
 
-                else {
+                else if (board[x][y] >= 9) {
                     cout << "invalid input!" << endl;
                     cin.clear();
                 }
@@ -413,4 +424,6 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
     //when the game is over, reset the sum of grid that is opened and the sum of flag into 0
     sum = 0;
     sumf = 0;
+    cout << "You won! Press enter to return to main menu..." << endl;
+    cin.ignore(1024, '\n');
 }
