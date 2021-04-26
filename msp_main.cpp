@@ -14,6 +14,8 @@ int main() {
     int** board = 0;
     string filename;
     char input = '0';
+    
+    
     while (input != '3') {
         switch (input) {
         case '0':
@@ -30,6 +32,7 @@ int main() {
             }
             break;
 
+                
         case '1': {
             char diff = '0';
             system("clear");
@@ -55,6 +58,8 @@ int main() {
                     inputboard(board, sum, size, bombs, sumf);
                     diff = '4';
                     break;
+                        
+                        
                 case '2':
                     size = 16;
                     bombs = 40;
@@ -67,6 +72,8 @@ int main() {
                     inputboard(board, sum, size, bombs, sumf);
                     diff = '4';
                     break;
+                        
+                        
                 case '3':
                     size = 24;
                     bombs = 120;
@@ -79,6 +86,8 @@ int main() {
                     inputboard(board, sum, size, bombs, sumf);
                     diff = '4';
                     break;
+                        
+                        
                 default:
                     system("clear");
                     cout << "Invalid Input! " << endl;
@@ -93,6 +102,8 @@ int main() {
             input = '0';
             break;
         }
+                
+                
         case '2':
             check = GetSize(size, bombs, filename);
             if (check == 0) {
@@ -108,8 +119,12 @@ int main() {
             inputboard(board, sum, size, bombs, sumf);
             input = '0';
             break;
+                
+                
         case '3':
             break;
+                
+                
         default:
             system("clear");
             cout << "Invalid Input!" << endl;
