@@ -332,7 +332,7 @@ void inputboard(int** board, int& sum, int size, int bombs, int& sumf) {
             //output "invalid input" if the input is invalid
             if (x < size && x >= 0 && y < size && y >= 0) {
                 if (board[x][y] < 10 && board[x][y] >= 0) {
-                    runboard(board, size, x, y);
+                    runboard(board, size, x, y, sum);
                     PrintBoard(board, size);
                 }
 
